@@ -1,10 +1,10 @@
 var mongoose = require("mongoose");
 
-var Category = mongoose.model(
-  "Category",
+var Role = mongoose.model(
+  "Role",
   new mongoose.Schema({
     name: String
   })
 );
 
-module.exports = Category;
+module.exports = Role;
