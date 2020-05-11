@@ -57,13 +57,13 @@ function initial() {
         });
   
         new Role({
-          name: "student"
+          name: "user"
         }).save(err => {
           if (err) {
             console.log("error", err);
           }
   
-          console.log("added 'student' to roles collection");
+          console.log("added 'user' to roles collection");
         });
       }
     });

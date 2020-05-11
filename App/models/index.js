@@ -9,7 +9,7 @@ db.user = require("./user");
 db.role = require("./role");
 db.category = require("./category")
 
-db.ROLES = ["admin", "tutor", "student"];
+db.ROLES = ["admin", "tutor", "user"];
 db.CATEGORY = ["primary", "JSS", "SSS"];
 
 module.exports = db;
