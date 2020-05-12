@@ -11,13 +11,7 @@ var User = mongoose.model(
         type: mongoose.Schema.Types.ObjectId,
         ref: "Role"
       }
-    ],
-    category: [
-        {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Category"
-        }
-      ]
+    ]
   })
 );
 
