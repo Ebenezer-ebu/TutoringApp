@@ -6,10 +6,18 @@ var User = mongoose.model(
     username: String,
     email: String,
     password: String,
+    firstname: String,
+    lastname: String,
     roles: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Role"
+      }
+    ],
+    subject: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Subject"
       }
     ]
   })
