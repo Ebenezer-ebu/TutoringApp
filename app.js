@@ -110,7 +110,7 @@ function initial() {
   require('./App/routes/category.routes')(app);
   require('./App/routes/lesson.routes')(app);
   require('./App/routes/user.routes')(app);
-  require('./app/routes/subject.routes')(app);
+  require('./App/routes/subject.routes')(app);
 // Port listen for request
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
