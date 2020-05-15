@@ -10,6 +10,8 @@ exports.signup = (req, res) => {
   const user = new User({
     username: req.body.username,
     email: req.body.email,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
     password: bcrypt.hashSync(req.body.password, 8)
   });
 
@@ -102,6 +104,8 @@ exports.signin = (req, res) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        firstname: user.firstname,
+        lastname: user.lastname,
         roles: authorities,
         accessToken: token
       });
