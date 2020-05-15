@@ -2,7 +2,7 @@ var express = require('express');
 var cors = require('cors');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var dbConfig = require("./App/config/db.config")
+var dbConfig = require("./App/config/db.config");
 
 var app = express();
 
@@ -106,6 +106,11 @@ function initial() {
     });
   }
 
+  require('./App/routes/auth.routes')(app);
+  require('./App/routes/category.routes')(app);
+  require('./App/routes/lesson.routes')(app);
+  require('./App/routes/user.routes')(app);
+  require('./app/routes/subject.routes')(app);
 // Port listen for request
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

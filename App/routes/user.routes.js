@@ -10,18 +10,11 @@ module.exports = function(app) {
     next();
   });
 
-  app.get("/api/test/all", controller.allAccess);
+  app.get("/api/v1/user/:firstname", [authJwt.verifyToken], controller.findByName);
 
-  app.get("/api/test/user", [authJwt.verifyToken], controller.userBoard);
+  app.get("/api/v1/user/:id", [authJwt.verifyToken, authJwt.isAdmin], controller.findOne);
 
-  app.get("/api/test/tutor",
-    [authJwt.verifyToken, authJwt.isTutor],
-    controller.tutorBoard
-  );
+  app.delete("/api/v1/user/:id", [authJwt.verifyToken, authJwt.isAdmin], controller.delete);
 
-  app.get(
-    "/api/test/admin",
-    [authJwt.verifyToken, authJwt.isAdmin],
-    controller.adminBoard
-  );
+  app.get("/api/v1/test/admin", [authJwt.verifyToken, authJwt.isAdmin], controller.subjectByUser);
 };

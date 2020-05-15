@@ -9,6 +9,12 @@ const Subject = mongoose.model(
         type: mongoose.Schema.Types.ObjectId,
         ref: "Category"
       }
+    ],
+    user: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+      }
     ]  
   }, {timestamps: true})
 );
